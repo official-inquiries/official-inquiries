@@ -59,3 +59,22 @@ To do this, we use PDFMiner
 ## Raising issues on GitHub
 * You can raise any project issues on GitHub using the issues tab on the web interface
 Or, help solve any issues listed there
+
+Contributing to existing repositories
+===========================
+
+## Converting archive files to text
+* The most simple way to help is to take files in the /archive/ directory of a repository, convert them into .txt format, and place them in the /text/ directory. We currently do this using PDFMiner. Instructions on how to install and use PDFMiner can be found [here](http://www.unixuser.org/~euske/python/pdfminer/)
+
+## Tidying text files into markdown
+* The next step is to convert these text files to markdown so that they can be put up on the website.
+* A file with the `.md` extension should be added to the repository's /markdown/ directory. If the report has multiple volumes, the file should be placed in an appropriate subdirectory.
+* Each text file will vary in how it is untidy, but the basic prerequisites of a web-ready file are:
+  * Working headings and subheadings with a table of contents at the top
+   * Headings will need to be added in markdown, with `#` for a main heading, `##` for a subheading, etc.
+   * A table of contents will need to be added at the top, by adding the code `* TOC` and then `{:toc}` on the next line. This will automatically generate a table of contents for the headings you have added.
+  * No superfluous text
+   * The most obvious candidate for deletion is the report's own table of contents, which will not be useful
+   * Page numbers and page names (for example, where the title of the report is printed at the bottom of every page) should also be removed if possible
+   
+    
