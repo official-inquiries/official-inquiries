@@ -68,7 +68,7 @@ Contributing to existing repositories
 
 ## Tidying text files into markdown
 * The next step is to convert these text files to markdown so that they can be put up on the website.
-* A file with the `.md` extension should be added to the repository's /markdown/ directory. If the report has multiple volumes, the file should be placed in an appropriate subdirectory.
+* A file with the `.md` extension should be added to the repository's /markdown/ directory.
 * Each text file will vary in how it is untidy, but the basic prerequisites of a web-ready file are:
   * Working headings and subheadings with a table of contents at the top
    * Headings will need to be added in markdown, with `#` for a main heading, `##` for a subheading, etc.
