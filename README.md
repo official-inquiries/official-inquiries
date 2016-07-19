@@ -33,6 +33,29 @@ How to contribute reports
 * Storing large files:
   * Sometimes, you will need to upload large files (ie larger than 50mb) to GitHub. It is not advisable to simply upload such large files as they are, so it is important to use git’s large file storage when doing so.
   * GitHub provides its own instructions on how to use lfs [here](https://github.com/github/git-lfs)
+  * For example:
+  After installing Git LFS, depending on your setup and preferences, run this command once per machine:
+  ```
+  $ git lfs install
+  ```
+  Now specify file patterns to store with Git LFS in `.gitattributes`:
+  ```
+  $ cd to/repo
+  $ git init
+  $ git lfs track "*.pdf"
+  ```
+  Commit your changes and push:
+  ```
+  $ git add .gitattributes
+  $ git add example.pdf
+  $ git commit -m "add pdf files"
+  $ git push
+  ```
+  You can confirm that Git LFS is managing your pdf file:
+  ```
+  $ git lfs ls-files
+  example.pdf
+  ```
 * Other important commands:
   * git status: at any point during the process, you can use `git status` to check the status of your local changes.
   * git pull: use `git pull` to pull changes made to the online repository and bring your local version up to date with them.
