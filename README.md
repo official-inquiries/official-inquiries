@@ -89,15 +89,59 @@ Contributing to existing repositories
 ## Converting archive files to text
 * The most simple way to help is to take files in the /archive/ directory of a repository, convert them into .txt format, and place them in the /text/ directory. We currently do this using PDFMiner. Instructions on how to install and use PDFMiner can be found [here](http://www.unixuser.org/~euske/python/pdfminer/)
 
-## Tidying text files into markdown
+## Tidying up converted text files
+* Once a converted text file has been placed in the /text/ directory, the next step is to tidy the file up and fix issues that the conversion software did not pick up. The criteria for a tidy inquiry can be found just [below](#markdown-header-Criteria-for-a-tidy-filei)
+* Some inquiries may have scripts which can be run to automate part or all of the tidy process. The Iraq Inquiry repository, for example, has a script in /scripts/process.py that will format footnotes and bullet points and remove unnecessary paragraph space. 
+
+## Turning tidy text files into markdown
 * The next step is to convert these text files to markdown so that they can be put up on the website.
 * A file with the `.md` extension should be added to the repository's /markdown/ directory.
-* Each text file will vary in how it is untidy, but the basic prerequisites of a web-ready file are:
-  * Working headings and subheadings with a table of contents at the top
-   * Headings will need to be added in markdown, with `#` for a main heading, `##` for a subheading, etc.
-   * A table of contents will need to be added at the top, by adding the code `* TOC` and then `{:toc}` on the next line. This will automatically generate a table of contents for the headings you have added.
-  * No superfluous text
-   * The most obvious candidate for deletion is the report's own table of contents, which will not be useful
-   * Page numbers and page names (for example, where the title of the report is printed at the bottom of every page) should also be removed if possible
-   
+
+## Criteria for a tidy file
+
+Each text file will vary in how it is untidy, but these are some things to look out for:
+
+### Page information
+
+This is needed for jekyll to read the markdown file as a webpage and so is a basic prerequisite of a tidy file. At the top of a tidy file should be:
+* The page information:
+  * Which html layout file in the _layout directory it uses (usually `page`)
+  * The title of the page
+  * `edit: true`
+* The markdown table of contents. The text of the inquiry's original table of contents should be removed. 
+
+Once you're done, the top of the page should look something like:
+
+![Screenshot](/screenshots/page-titling.png)
+
+### Headings
+
+* In order for markdown's table of contents to work, headings and subheadings should be formatted in markdown
+* Headings should also be in standard casing, avoiding all-caps where the text conversion has produced this 
+
+### Bullet points
+
+* Bullet points should be formatted in markdown
+
+### Page and paragraph numbers
+
+* Some inquiries will have section and paragraph numbers. We generally want to keep these.
+* Page numbers should be:
+  * Retained, in cases where there are no paragraph or section numbers (people will want some way of knowing where to look in our reports, eg. “on paragraph/page x of the inquiry”)
+    * Where  they are retained, they should be clearly separate from the text, on their own line, ideally with a line space before and after.
+    * Putting the text “Page” before the number helps make it clear that the number is a page number, eg “Page 9” instead of just “9”.
+  * Deprecated, in cases where there are paragraph or section numbers (these alone should provide enough guidance for users. Too many page numbers is untidy).
+
+### Page titles
+
+* These should be removed, usually with a simple find and replace
+
+### Excess space
+
+* Some inquiries, when processed, may process superfluous extra space between some lines, usually where a page break occurred in the source file. This should be removed.
+
+### Text disorder
+
+* Unfortunately, some inquiries [for example this inquiry’s text](https://github.com/official-inquiries/senate-psi-20110403-wall-street-and-the-financial-crisis/blob/master/text/index.md) do not process the text in the correct order.
+* In this case, it can be worth trying another text extraction tool, if you are aware of one. If you have success like this, please let us know which tool you used.
     
