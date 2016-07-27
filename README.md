@@ -90,7 +90,7 @@ Contributing to existing repositories
 * The most simple way to help is to take files in the /archive/ directory of a repository, convert them into .txt format, and place them in the /text/ directory. We currently do this using PDFMiner. Instructions on how to install and use PDFMiner can be found [here](http://www.unixuser.org/~euske/python/pdfminer/)
 
 ## Tidying up converted text files
-* Once a converted text file has been placed in the /text/ directory, the next step is to tidy the file up and fix issues that the conversion software did not pick up. The criteria for a tidy inquiry can be found just [below](#markdown-header-Criteria-for-a-tidy-filei)
+* Once a converted text file has been placed in the /text/ directory, the next step is to tidy the file up and fix issues that the conversion software did not pick up. The criteria for a tidy inquiry can be found just below.
 * Some inquiries may have scripts which can be run to automate part or all of the tidy process. The Iraq Inquiry repository, for example, has a script in /scripts/process.py that will format footnotes and bullet points and remove unnecessary paragraph space. 
 
 ## Turning tidy text files into markdown
