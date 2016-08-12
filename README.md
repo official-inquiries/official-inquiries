@@ -76,8 +76,10 @@ How to contribute reports
 
 ## Extracting text from a .pdf
 * Usually, you will have to extract text from a .pdf file of a report to get text for your _text_ directory.
-To do this, we use PDFMiner
+To do this, we usually use PDFMiner
 * Instructions on how to install and use PDFMiner can be found [here](http://www.unixuser.org/~euske/python/pdfminer/)
+In some cases, you may also want to try using [Apache PDFbox](http://pdfbox.apache.org/download.cgi)
+* To use PDFbox, download the `.jar`file and then run the command `java -jar pdfbox-app-2.y.z.jar ExtractText [OPTIONS] <inputfile> <outputfile>` (where `y`and `z`are the version numbers of the file you downloaded)
 
 ## Raising issues on GitHub
 * You can raise any project issues on GitHub using the issues tab on the web interface
