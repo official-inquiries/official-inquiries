@@ -83,8 +83,36 @@ To do this, we use PDFMiner
 * You can raise any project issues on GitHub using the issues tab on the web interface
 Or, help solve any issues listed there
 
+Finding inquiries
+===========================
+
+If you have found an interesting official inquiry, the procedure is to add it as a github issue on the [main Official Inquiries repository](https://github.com/official-inquiries/official-inquiries/issues). The issue post should contain:
+
+* The country of origin for the inquiry
+* A synopsis of what the inquiry is
+* Links to the original documents
+
+We will focus our work on the inquiries that are likely to have the greatest public interest first. If and when an inquiry is chosen, a repository will be created for it, containing:
+
+* A README detailing the inquiry with a summary of its contents, a list of the materials used and the license under which they are available to us.
+* An /archive/ directory containing all the original files
+* A data package containing relevant information about the inquiry
+
+As an example, look at [the repository for the Levin/Coburn report into the Financial Crisis](https://github.com/official-inquiries/senate-psi-20110403-wall-street-and-the-financial-crisis)
+
 Contributing to existing repositories
 ===========================
+
+Once we have the original files for an inquiry, then we then want to end up with:
+
+* [preserved original file] - the archive file
+* [preserved original text] – the file having been put through the text extraction tool and only the text extraction tool
+* [“tidy” text] – the tidied text; this can be tidied in stages, either manually or with a script
+* [markdown file] – the most up-to-date “tidy” text in markdown, this goes on the site
+
+This allows us to tidy documents in stages. The actions, files and file locations for our workflow look like this:
+
+![Workflow](screenshots/workflow.png)
 
 ## Converting archive files to text
 * The most simple way to help is to take files in the /archive/ directory of a repository, convert them into .txt format, and place them in the /text/ directory. We currently do this using PDFMiner. Instructions on how to install and use PDFMiner can be found [here](http://www.unixuser.org/~euske/python/pdfminer/)
